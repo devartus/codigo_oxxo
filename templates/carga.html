@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <!-- Main component for a primary marketing message or call to action -->
+  
+  <div class="panel panel-default">
+  <div class="panel-heading">
+    <h2>Generacion de codigo Oxxo</h2>
+    </div>
+  <div class="panel-body">
+    <div class="alert alert-info">
+    <strong>Instrucciones: </strong>
+    <ol>
+      <li>Introduzca su codigo para generar el codigo oxxo</li>
+      <!-- <li>Seleccione la empresa</li>
+      <li>Seleecione la cuenta</li> 
+      <li>Seleccione el archivo donde se encuentra la informacion a procesar.</li>
+      <li>Descargue el archivo</li>-->
+    </ol> 
+    </div>
+
+    <form action="#" method="post" id="formulario">
+        <p class="lead banco">
+            {{ form_row(form.nombre) }}
+        </p> 
+      <p class="lead codigo">
+          {{ form_row(form.codigo) }}
+      </p>
+      {{ form_widget(form) }}
+
+      <p class="lead">
+        <input type="submit" name="submit" class="btn btn-lg btn-primary" value="Generar codigo &raquo;" />
+      </p>
+
+      {% if not urlImg is empty %}  
+        <br>  
+        <p class="lead">
+          <img src="{{ urlImg }}" alt="">
+        </p>
+      {% endif %}
+    </form>
+  </div>
+</div>
+  
+{% endblock %}

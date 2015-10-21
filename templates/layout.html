@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title '' %} comouno</title>
+        
+        <link href="{{ asset('css/bootstrap.yeti.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
+        
+        <script src="{{ asset('js/jquery.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.js') }}"></script>
+
+    </head>
+    <body>
+        <div class="container">
+          <!-- Static navbar -->
+          <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed " data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Como Uno</a>
+              </div>
+              <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>  Inicio</a></li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Archivo <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li class="dropdown-header">Codigos oxxo </li>
+                      <li><a href="{{ path('creaCodigo') }}"><span class="glyphicon glyphicon-export" aria-hidden="true"></span>  Generar Codigo OXXO</a></li>
+                      <li><a href="#">...</a></li>
+                      <li class="divider"></li>
+                      <li class="dropdown-header">Catalogos</li>
+                      <li><a href="#">...</a></li>
+                    </ul>
+                  </li>
+                  <!-- <li><a href="#"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Comentarios</a></li> -->
+                </ul>
+              </div><!--/.nav-collapse -->
+            </div><!--/.container-fluid -->
+          </nav>
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>
